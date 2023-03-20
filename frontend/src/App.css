@@ -1,0 +1,78 @@
+.App {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a:link    { color: inherit; text-decoration: underline; }
+a:visited { color: inherit; text-decoration: underline; }
+a:hover   { color: inherit; text-decoration: underline; }
+a:active  { color: inherit; text-decoration: underline; }
+
+.main-container {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #DBD8E3;
+}
+
+.search-input {
+  width: 80vw;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-input select {
+  height: 40px;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-input input[type="text"] {
+  height: 20px;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-input button {
+  height: 40px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #5C5470;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #2A2438;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: all 0.3s;
+}
