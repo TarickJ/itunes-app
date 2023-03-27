@@ -7,7 +7,7 @@ const path = require('path');
 
 // Import configuration and routes
 const config = require('./config/config');
-const router = require('./routes/index'); // import router instance
+const routes = require('./routes/index'); // import router instance
 
 // Create an instance of the Express application
 const app = express();
@@ -39,7 +39,7 @@ app.use(helmet({
 app.use(express.json());
 
 // Use the router instance for the `/api` endpoint
-app.use('/api', router);
+app.use('/api', routes);
 
 if (process.env.NODE_ENV === 'production') {
   // set static folder
