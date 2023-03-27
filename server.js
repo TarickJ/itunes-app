@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
-const path = require('path'); // add this line to import the path module
+const path = require('path');
 
 // Import configuration and routes
 const config = require('./config/config');
