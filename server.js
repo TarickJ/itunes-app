@@ -3,10 +3,11 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
+const path = require('path');
 
 // Import configuration and routes
 const config = require('./config/config');
-const routes = require('./routes/index');
+const router = require('./routes/index'); // import router instance
 
 // Create an instance of the Express application
 const app = express();
@@ -37,10 +38,18 @@ app.use(helmet({
 // Use middleware to parse request bodies as JSON
 app.use(express.json());
 
-// Define your API routes here
-app.use('/api', routes);
+// Use the router instance for the `/api` endpoint
+app.use('/api', router);
 
-// Start the server
+if (process.env.NODE_ENV === 'production') {
+  // set static folder
+  app.use(express.static('frontend/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
+}
+
 app.listen(config.port, () => {
   console.log(`Server started on port ${config.port}`);
 });
