@@ -11,7 +11,7 @@ router.get('/api/search', async (req, res) => {
   const { term, media } = req.query;
 
   // Get the iTunes API URL from the app configuration
-  const { itunesApiUrl } = req.app.get('config');
+  const { itunesApiUrl } = req.app.get('../config');
 
   try {
     // Make a GET request to the iTunes Search API with the provided parameters
