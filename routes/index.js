@@ -6,12 +6,12 @@ const express = require('express');
 const router = express.Router();
 
 // Define a route for the `/search` endpoint
-router.get('/api/search', async (req, res) => {
+router.get('/search', async (req, res) => {
   // Extract query parameters from the request object
   const { term, media } = req.query;
 
   // Get the iTunes API URL from the app configuration
-  const { itunesApiUrl } = req.app.get('../config');
+  const { itunesApiUrl } = req.app.get('config');
 
   try {
     // Make a GET request to the iTunes Search API with the provided parameters
