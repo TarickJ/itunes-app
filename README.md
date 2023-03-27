@@ -16,7 +16,6 @@ Security
 - Helmet helps with security by setting security-related HTTP headers that help to protect the application from various attacks. It helps to prevent attacks such as cross-site scripting (XSS), clickjacking, and other security vulnerabilities. Additionally, Helmet disables the Cross-Origin-Embedder-Policy (COEP) header to resolve any related security issues.
 
 
-Usage
 To use the app, follow these steps:
 
 - Enter a search term in the search bar and select a media type from the dropdown menu.
