@@ -2,7 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const path = require('path');
 
 // Import configuration and routes
@@ -22,18 +22,18 @@ app.use(morgan('tiny'));
 app.use(cors());
 
 // Use middleware to set security-related HTTP headers
-app.use(helmet({
-  contentSecurityPolicy: false,
-  frameguard: {
-    action: 'deny'
-  },
-  hsts: {
-    maxAge: 31536000,
-    includeSubDomains: true
-  },
-  noSniff: true,
-  xssFilter: true
-}));
+// app.use(helmet({
+//   contentSecurityPolicy: false,
+//   frameguard: {
+//     action: 'deny'
+//   },
+//   hsts: {
+//     maxAge: 31536000,
+//     includeSubDomains: true
+//   },
+//   noSniff: true,
+//   xssFilter: true
+// }));
 
 // Use middleware to parse request bodies as JSON
 app.use(express.json());
