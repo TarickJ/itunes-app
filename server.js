@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
+const path = require('path'); // add this line to import the path module
 
 // Import configuration and routes
 const config = require('./config/config');
@@ -40,7 +41,14 @@ app.use(express.json());
 // Define your API routes here
 app.use('/api', routes);
 
-// Start the server
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+// Catch-all route handler to serve the React app's index.html file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
+});
+
 app.listen(config.port, () => {
   console.log(`Server started on port ${config.port}`);
 });

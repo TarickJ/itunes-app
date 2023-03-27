@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 
 // Define a route for the `/search` endpoint
-router.get('/search', async (req, res) => {
+router.get('/api/search', async (req, res) => {
   // Extract query parameters from the request object
   const { term, media } = req.query;
 
