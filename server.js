@@ -41,13 +41,14 @@ app.use(express.json());
 // Define your API routes here
 app.use('/api', routes);
 
-// Serve the static files from the React app
-app.use(express.static('frontend/build'));
+if (process.env.NODE_ENV === 'production') {
+  // set static folder
+  app.use(express.static('frontend/build'));
 
-// Catch-all route handler to serve the React app's index.html file
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
-});
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
+}
 
 app.listen(config.port, () => {
   console.log(`Server started on port ${config.port}`);
