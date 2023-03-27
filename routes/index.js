@@ -1,5 +1,5 @@
 // Import necessary modules
-const axios = require('axio');
+const axios = require('axios');
 const express = require('express');
 
 // Create a router instance
