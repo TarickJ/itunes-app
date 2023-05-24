@@ -20,7 +20,7 @@ router.get('/search', async (req, res) => {
     // Send the response data back to the client as JSON
     res.json(response.data);
   } catch (error) {
-    // Handle errors and send an appropriate error response
+    // Handle errors and send an appropriate error response.
     console.error(error);
     res.status(500).send('Internal Server Error');
   }
